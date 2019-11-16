@@ -52,8 +52,6 @@ assays$Experiment = as.factor(as.character(assays$Experiment))
 assays = assays[!is.na(assays$Viability),]
 assays$log10Conc = log10(assays$Concentration)
 
-
-
 ####################################################################################################
 # Is there a difference between BAMLET TC50 for mesothelioma vs TC50 of the resistant fraction of non-cancer fibroblast cells?
 #
@@ -89,7 +87,6 @@ assays$log10Conc = log10(assays$Concentration)
 # scal = factor affecting slope at inflection points
 # sens = fraction of cells having inflection point 1 (fraction of BAMLET-sensitive cells)
 # 1 - sens = fraction of cells having inflection point 2 (fraction of BAMLET-resistant cells)
-
 
 ####################################################################################################
 # Define the various possible models and their functions.
