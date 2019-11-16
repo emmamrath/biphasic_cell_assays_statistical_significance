@@ -10,6 +10,7 @@ The programs are:
 
 * step01_choose_model.R (determine whether the data for a cell line is biphase or uniphasic)
 * step02_determine_statistical_significance.R (using models chosen manually in step01, determine whether difference between TC50 of 2 cell lines is statistically significant)
+* step03_determine_TC50_and_stdev (determine the TC50 for each experiment and calculate the stdev of TC50 from the multiple experiments)
 
 The code in these programs were used to analyse cell death assays of the following paper, which can be considered the citation for these programs:  
 
@@ -71,4 +72,12 @@ args_cellline_1 = args[2] # MM05
 args_model_1 = args[2] # 1component # MM05 is uniphasic, only 1 TC50
 args_cellline_2 = args[2] # HOFM01
 args_model_2 = args[2] # 2component # HOFM01 is biphasic, has 2 TC50s
+
+#### step03_determine_TC50_and_stdev.R
+# Rscript step03_determine_TC50_and_stdev.R <input_file> <cell_line> <model> > <output_file>
+# Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt HOFM01 2component > step01_output.txt
+# Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt MM05 1component > step01_output.txt
+args_infile = args[1] # human_bamlet_cell_assay_data.txt
+args_cellline = args[2] # HOFM01
+args_model = args[3] # 1component or 2component
 

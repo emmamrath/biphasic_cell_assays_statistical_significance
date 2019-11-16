@@ -35,9 +35,9 @@ args = commandArgs(trailingOnly=TRUE) # for production
 
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
 args_cellline_1 = args[2] # MM05
-args_model_1 = args[2] # 1component # MM05 is uniphasic, only 1 TC50
-args_cellline_2 = args[2] # HOFM01
-args_model_2 = args[2] # 2component # HOFM01 is biphasic, has 2 TC50s
+args_model_1 = args[3] # 1component # MM05 is uniphasic, only 1 TC50
+args_cellline_2 = args[4] # HOFM01
+args_model_2 = args[5] # 2component # HOFM01 is biphasic, has 2 TC50s
 
 human = read.table(args_infile, sep = "\t", header = TRUE)
 
