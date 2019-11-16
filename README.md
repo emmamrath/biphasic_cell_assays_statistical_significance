@@ -9,6 +9,7 @@ The data may be biphasic with two inflexion points for LC50 (lethal concentratio
 The programs are:
 
 * step01_choose_model.R (determine whether the data for a cell line is biphase or uniphasic)
+* step02_determine_statistical_significance.R (using models chosen manually in step01, determine whether difference between TC50 of 2 cell lines is statistically significant)
 
 The code in these programs were used to analyse cell death assays of the following paper, which can be considered the citation for these programs:  
 
@@ -24,6 +25,7 @@ Columns are experiment details (cell type and experiment date) and increasing co
 Rows are experiments and technical replicates of experiments.
 
 ```
+Organism        Line    Experiment      0.009765625     0.01953125      0.0390625       0.078125        0.15625 0.3125  0.625   1.25    2.5     5
 Human   HOFM01  20151227                1.13298265      1.2518457       1.169650548     1.179535294     0.321131209     0.522045855     0.466633854     0.13501292      0.102600386
 Human   HOFM01  20151227                1.133447664     1.202355076     1.130446487     1.148294016     0.386334178     0.472610525     0.404720123     0.111811275     0.104074022
 Human   HOFM01  20151227                1.086991591     1.110302273     1.14235446      1.144038233     0.413532698     0.484604061     0.341553911     0.118448912     0.100895324
@@ -60,4 +62,13 @@ Rscript step01_choose_model.R <input_file> <cell_line> > <output_file>
 Rscript step01_choose_model.R human_bamlet_cell_assay_data.txt HOFM01 > step01_output.txt
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
 args_cellline = args[2] # HOFM01
+
+#### step02_determine_statistical_significance.R
+Rscript step02_determine_statistical_significance.R <input_file> <cell_line_1> <model_1> <cell_line_2> <model_2> > <output_file>
+Rscript step02_determine_statistical_significance.R human_bamlet_cell_assay_data.txt MM05 1component HOFM01 2component > step02_output.txt
+args_infile = args[1] # human_bamlet_cell_assay_data.txt
+args_cellline_1 = args[2] # MM05
+args_model_1 = args[2] # 1component # MM05 is uniphasic, only 1 TC50
+args_cellline_2 = args[2] # HOFM01
+args_model_2 = args[2] # 2component # HOFM01 is biphasic, has 2 TC50s
 
