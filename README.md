@@ -61,12 +61,15 @@ Rscript <program_name>.R <arg_1> <arg_2> <more args...>
 The arguments of each program can be seen at the top of the program.
 
 #### step01_choose_model.R
+```
 Rscript step01_choose_model.R <input_file> <cell_line> > <output_file>
 Rscript step01_choose_model.R human_bamlet_cell_assay_data.txt HOFM01 > step01_output.txt
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
 args_cellline = args[2] # HOFM01
+```
 
 #### step02_determine_statistical_significance.R
+```
 Rscript step02_determine_statistical_significance.R <input_file> <cell_line_1> <model_1> <cell_line_2> <model_2> > <output_file>
 Rscript step02_determine_statistical_significance.R human_bamlet_cell_assay_data.txt MM05 1component HOFM01 2component > step02_output.txt
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
@@ -74,18 +77,22 @@ args_cellline_1 = args[2] # MM05
 args_model_1 = args[2] # 1component # MM05 is uniphasic, only 1 TC50
 args_cellline_2 = args[2] # HOFM01
 args_model_2 = args[2] # 2component # HOFM01 is biphasic, has 2 TC50s
+```
 
 #### step03_determine_TC50_and_stdev.R
-# Rscript step03_determine_TC50_and_stdev.R <input_file> <cell_line> <model> > <output_file>
-# Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt HOFM01 2component > step01_output.txt
-# Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt MM05 1component > step01_output.txt
+```
+Rscript step03_determine_TC50_and_stdev.R <input_file> <cell_line> <model> > <output_file>
+Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt HOFM01 2component > step01_output.txt
+Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt MM05 1component > step01_output.txt
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
 args_cellline = args[2] # HOFM01
 args_model = args[3] # 1component or 2component
+```
 
 #### step04_model_chemo_resistant_vs_sensitive_cell_lines.R
-# Rscript step04_model_chemo_resistant_vs_sensitive_cell_lines.R <input_file_1> <input_file_2> <cell_line> > <output_file>
-# Rscript step04_model_chemo_resistant_vs_sensitive_cell_lines.R rat_chemo_cell_assay_data_1.txt rat_chemo_cell_assay_data_2.txt rat_bamlet_cell_assay_data.txt IL45CisR_highDose IL45_high_passage IL45CisR_lowDose IL45_low_passage > step04_output.txt
+```
+Rscript step04_model_chemo_resistant_vs_sensitive_cell_lines.R <input_file_1> <input_file_2> <cell_line> > <output_file>
+Rscript step04_model_chemo_resistant_vs_sensitive_cell_lines.R rat_chemo_cell_assay_data_1.txt rat_chemo_cell_assay_data_2.txt rat_bamlet_cell_assay_data.txt IL45CisR_highDose IL45_high_passage IL45CisR_lowDose IL45_low_passage > step04_output.txt
 args_infile_chemo1_1 = args[1] # rat_chemo_cell_assay_data_1.txt # Can be either the higher or lower concentrations,
 args_infile_chemo1_2 = args[2] # rat_chemo_cell_assay_data_2.txt # because will all go into one data frame.
 args_infile_treatment = args[3] # rat_bamlet_cell_assay_data.txt # 
@@ -93,10 +100,12 @@ args_cellline_chemoResistant_highDose = args[4] # IL45CisR_highDose
 args_cellline_chemoResistant_lowDose = args[5] # IL45_high_passage
 args_cellline_chemoSensitive_highPassage = args[6] # IL45CisR_lowDose
 args_cellline_chemoSensitive_lowPassage = args[7] # IL45_low_passage
+```
 
 #### step05_TC50_and_plots_chemo_resistant_vs_sensitive.R
-# Rscript step05_TC50_and_plots_chemo_resistant_vs_sensitive.R <input_file_1> <input_file_2> <cell_line> > <output_file>
-# Rscript step05_TC50_and_plots_chemo_resistant_vs_sensitive.R rat_chemo_cell_assay_data_1.txt rat_chemo_cell_assay_data_2.txt rat_bamlet_cell_assay_data.txt IL45CisR_highDose IL45_high_passage IL45CisR_lowDose IL45_low_passage > step04_output.txt
+```
+Rscript step05_TC50_and_plots_chemo_resistant_vs_sensitive.R <input_file_1> <input_file_2> <cell_line> > <output_file>
+Rscript step05_TC50_and_plots_chemo_resistant_vs_sensitive.R rat_chemo_cell_assay_data_1.txt rat_chemo_cell_assay_data_2.txt rat_bamlet_cell_assay_data.txt IL45CisR_highDose IL45_high_passage IL45CisR_lowDose IL45_low_passage > step04_output.txt
 args_infile_chemo1_1 = args[1] # rat_chemo_cell_assay_data_1.txt # Can be either the higher or lower concentrations,
 args_infile_chemo1_2 = args[2] # rat_chemo_cell_assay_data_2.txt # because will all go into one data frame.
 args_infile_treatment = args[3] # rat_bamlet_cell_assay_data.txt # 
@@ -104,3 +113,4 @@ args_cellline_chemoResistant_highDose = args[4] # IL45CisR_highDose
 args_cellline_chemoResistant_lowDose = args[5] # IL45_high_passage
 args_cellline_chemoSensitive_highPassage = args[6] # IL45CisR_lowDose
 args_cellline_chemoSensitive_lowPassage = args[7] # IL45_low_passage
+```
