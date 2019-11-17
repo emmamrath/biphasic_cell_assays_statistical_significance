@@ -250,6 +250,12 @@ if (args_model == '1component') {
 	TC50_sensitive_sd = sd(list_TC50_sensitive)
 	TC50_sensitive
 	TC50_sensitive_sd
+
+	# Plot actual line vs fitted line
+	fit_x = seq(-1, 2, 0.01)
+	fit_y = predict.1component(coef(fit.1component), fit_x)
+	fit=data.frame(x=fit_x,y=fit_y)
+	ggplot(cellline, aes(x=log10(Concentration), y=Viability, col=Line)) + geom_line() + geom_line(data=fit,color="red",aes(x=x,y=y))
 }
 
 # Example output
