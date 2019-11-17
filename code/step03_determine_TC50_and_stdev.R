@@ -2,6 +2,11 @@
 # Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt HOFM01 2component > step01_output.txt
 # Rscript step03_determine_TC50_and_stdev.R human_bamlet_cell_assay_data.txt MM05 1component > step01_output.txt
 
+# The input cancer cell lines have only one TC50. 
+# However, the input non-cancer cell lines have a biphasic response to drug treatment and have two TC50.
+# Hypothesis for step02: That the higher TC50 of the non-cancer cell line is statistically significantly higher than the TC50 of the cancer cell line.
+# Step03 are the TC50 calculations for the step02 work.
+
 library(reshape2)
 library(ggplot2)
 library(optimx)
@@ -248,6 +253,7 @@ if (args_model == '1component') {
 
 	TC50_sensitive_mean = mean(list_TC50_sensitive)
 	TC50_sensitive_sd = sd(list_TC50_sensitive)
+
 	TC50_sensitive
 	TC50_sensitive_sd
 

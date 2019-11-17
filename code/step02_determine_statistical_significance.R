@@ -1,6 +1,10 @@
 # Rscript step02_determine_statistical_significance.R <input_file> <cell_line_1> <model_1> <cell_line_2> <model_2> > <output_file>
 # Rscript step02_determine_statistical_significance.R human_bamlet_cell_assay_data.txt MM05 1component HOFM01 2component > step02_output.txt
 
+# The input cancer cell lines have only one TC50. 
+# However, the input non-cancer cell lines have a biphasic response to drug treatment and have two TC50.
+# Hypothesis for step02: That the higher TC50 of the non-cancer cell line is statistically significantly higher than the TC50 of the cancer cell line.
+
 library(reshape2)
 library(ggplot2)
 library(optimx)

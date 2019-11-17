@@ -1,6 +1,11 @@
 # Rscript step01_choose_model.R <input_file> <cell_line> > <output_file>
 # Rscript step01_choose_model.R human_bamlet_cell_assay_data.txt HOFM01 > step01_output.txt
 
+# The input cancer cell lines have only one TC50. 
+# However, the input non-cancer cell lines have a biphasic response to drug treatment and have two TC50.
+# Hypothesis for step02: That the higher TC50 of the non-cancer cell line is statistically significantly higher than the TC50 of the cancer cell line.
+# Step01 is the preparatory modelling for hte step02 work.
+
 library(reshape2)
 library(ggplot2)
 library(optimx)
