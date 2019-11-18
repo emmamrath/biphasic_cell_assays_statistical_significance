@@ -52,8 +52,8 @@ Human   H226    20160101                        0.899923501     0.950099544     
 Human   H226    20160101                        0.932106895     0.944990504     0.90207903      0.943474785     0.064801593     0.04243088      0.046187829     0.067370921
 ```
 
-![Examples of biphasic (two TC50 inflexion points; brown, tan) and monophasic (one TC50 inflexion point; yellow, green, orange, blue) cell assay data](/docs/cell_viability_biphasic_and_monophasic.jpg?raw=true "Example of biphasic (brown, tan) and monophasic (yellow, green, orange, blue) cell assay data")
-Examples of biphasic (two TC50 inflexion points; brown, tan) and monophasic (one TC50 inflexion point; yellow, green, orange, blue) cell assay data
+![Examples of biphasic (two TC50 inflexion points; brown, tan) and monophasic (one TC50 inflexion point; yellow, green, orange, blue) cell assay data](/docs/cell_viability_biphasic_and_monophasic.jpg?raw=true "Example of biphasic (brown, tan) and monophasic (yellow, green, orange, blue) cell assay data")  
+Examples of biphasic (two TC50 inflexion points; brown, tan) and monophasic (one TC50 inflexion point; yellow, green, orange, blue) cell assay data  
 
 ## Input parameters
 
