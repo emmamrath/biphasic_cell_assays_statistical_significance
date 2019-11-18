@@ -4,15 +4,15 @@ Biphasic Cell Aassays Statistical Significance
 ## Overview
 
 These R programs process cell death assay data to determine if there is a statistically significant difference between 2 cell lines.
-The data may be biphasic with two inflexion points for LC50 (lethal concentration 50%) or uniphasic (one inflexion point, only one TC50).
+The data may be biphasic with two inflexion points for LC50 (lethal concentration 50%) or monophasic (one inflexion point, only one TC50).
 
 The programs are:
 
-* step01_choose_model.R (determine whether the data for a cell line is biphase or uniphasic)
+* step01_choose_model.R (determine whether the data for a cell line is biphase or monophasic)
 * step02_determine_statistical_significance.R (using models chosen manually in step01, determine whether difference between TC50 of 2 cell lines is statistically significant)
 * step03_determine_TC50_and_stdev.R (determine the TC50 for each experiment and calculate the stdev of TC50 from the multiple experiments)
-* step04_model_chemo_resistant_vs_sensitive_cell_lines.R (for uniphasic data, determine whether difference between TC50 of 2 cell lines is statistically significant)
-* step05_TC50_and_plots_chemo_resistant_vs_sensitive.R (plots and calculate TC50 for uniphasic data)
+* step04_model_chemo_resistant_vs_sensitive_cell_lines.R (for monophasic data, determine whether difference between TC50 of 2 cell lines is statistically significant)
+* step05_TC50_and_plots_chemo_resistant_vs_sensitive.R (plots and calculate TC50 for monophasic data)
 
 The code in these programs were used to analyse cell death assays of the following paper, which can be considered the citation for these programs:  
 
@@ -52,6 +52,8 @@ Human   H226    20160101                        0.899923501     0.950099544     
 Human   H226    20160101                        0.932106895     0.944990504     0.90207903      0.943474785     0.064801593     0.04243088      0.046187829     0.067370921
 ```
 
+![Example of biphasic (brown, tan) and monophasic (yellow, green, orange, blue) cell assay data](/docs/cell_viability_biphasic_and_monophasic.jpg?raw=true "Example of biphasic (brown, tan) and monophasic (yellow, green, orange, blue) cell assay data")
+
 ## Input parameters
 
 The programs can be called as: 
@@ -74,7 +76,7 @@ Rscript step02_determine_statistical_significance.R <input_file> <cell_line_1> <
 Rscript step02_determine_statistical_significance.R human_bamlet_cell_assay_data.txt MM05 1component HOFM01 2component > step02_output.txt
 args_infile = args[1] # human_bamlet_cell_assay_data.txt
 args_cellline_1 = args[2] # MM05
-args_model_1 = args[2] # 1component # MM05 is uniphasic, only 1 TC50
+args_model_1 = args[2] # 1component # MM05 is monophasic, only 1 TC50
 args_cellline_2 = args[2] # HOFM01
 args_model_2 = args[2] # 2component # HOFM01 is biphasic, has 2 TC50s
 ```
